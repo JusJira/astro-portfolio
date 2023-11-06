@@ -1,48 +1,51 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
-import ThemeIcon from './ThemeIcon.astro';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header class="dark:bg-neutral-800 dark:text-white">
-	<nav class="grid md:grid-cols-3 md:grid-rows-1 grid-cols-2 grid-rows-2">
-		<h2><a class="flex" href="/">{SITE_TITLE}</a></h2>
-		<div class="w-full flex items-center justify-center col-span-2 md:col-span-1">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/projects">Projects</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-		<ThemeIcon id="themeIcon"/>
-	</nav>
+  <nav class="grid md:grid-cols-3 md:grid-rows-1 grid-cols-2 grid-rows-2">
+    <span><a class="flex" href="/">{SITE_TITLE}</a></span>
+    <div
+      class="w-full flex items-center justify-center col-span-2 md:col-span-1"
+    >
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/project">Projects</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+    <ThemeIcon id="themeIcon" class="md:grid-area-[]" />
+  </nav>
 </header>
 <style>
-	#themeIcon {
-		grid-area: 1/2;
-	}
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+  @media (max-width: 768px) {
+    #themeIcon {
+      grid-area: 1/2;
+    }
+  }
+  header {
+    margin: 0;
+    padding: 0 1em;
+    background: white;
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+  }
+  h2 {
+    margin: 0;
+    font-size: 1em;
+  }
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+  }
+  nav a {
+    padding: 1em 0.5em;
+    color: var(--black);
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+  }
+  nav a.active {
+    text-decoration: none;
+    border-bottom-color: var(--accent);
+  }
 </style>
-
