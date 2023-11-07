@@ -4,3 +4,48 @@
 export const SITE_TITLE = "Justin Jira";
 export const SITE_DESCRIPTION =
   "Justin Jiraratsakul is a passionate engineering student and web developer with an interest in creating user-friendly and high-performance websites.";
+export const EXPERIENCE = [
+  {
+    name: "Thinc's 10 Days Project 2023",
+    location: "Chulalongkorn University, Thailand",
+    date: "Oct 2023",
+    description: [
+      "- Hackathon challenge to develop a web application in 10 days",
+    ],
+    githubUrl: "https://github.com/JusJira/10days-project-2023/",
+  },
+  {
+    name: "Thinc's Hack to School",
+    location: "Cleverse, Thailand",
+    date: "Jan 2023",
+    description: [
+      "- Hackathon challenge to develop a web application in 7 days",
+      "- Earned prize money for getting 2nd place.",
+    ],
+    githubUrl: "https://github.com/thinc-org/hacktoschool-yilongma",
+  },
+  {
+    name: "Thinc's 10 Days Project 2022",
+    location: "Chulalongkorn University, Thailand",
+    date: "Oct 2022",
+    description: [
+      "- Hackathon challenge to develop a web application in 10 days",
+    ],
+    githubUrl: "https://github.com/HEKYPTO/Project10Days",
+  },
+];
+
+export const EDUCATION = [
+  {
+    name: "Chulalongkorn University",
+    location: "Bangkok, Thailand",
+    date: "2021 - Current",
+    description: ["Electrical Engineering (B.Sc.)"],
+  },
+  {
+    name: "Assumption College Samutprakarn",
+    location: "Samutprakarn, Thailand",
+    date: "2019 - 2021",
+    description: ["Science, Mathematics"],
+  },
+];

@@ -11,27 +11,19 @@ const projects = (await getCollection("project")).filter(
   <div
     class="h-full grid md:grid-cols-5 md:grid-rows-2 md:p-16 md:gap-10 p-4 gap-4"
   >
-    <div
-      class="w-full h-full border-2 dark:border-white border-black rounded-md dark:text-white p-4 md:col-span-2"
-    >
+    <div class="box dark:text-white p-4 md:col-span-2">
       <h1>
-        <span class="text-sm md:text-base">Hi i'm</span>
+        <span class="text-sm md:text-base">Hi i'm{" "}</span>
         <br /><span
           class="text-2xl md:text-3xl p-1 font-bold bg-gradient-to-r from-violet-500 to-red-400 via-fuchsia-500 bg-clip-text text-transparent"
           >Justin Jiraratsakul</span
         >
       </h1>
-      <p class="text-sm md:text-base mt-1">
-        I am a student at Chulalongkorn University, studying electrical
-        engineering. I have a deep interest in web development. I love to learn
-        new things and conquer new challenges. Beyond web development, I also
-        provision servers, configure routers, and much more. I also use Python
-        for some of my work!
-      </p>
+      <h2 class="text-lg text-center mt-1">
+        I love Coding, Tinkering and Having Fun
+      </h2>
     </div>
-    <div
-      class="w-full h-full border-2 dark:border-white border-black rounded-md dark:text-white p-4 md:col-span-3 md:row-span-2"
-    >
+    <div class="box md:col-span-3 md:row-span-2">
       <h2 class="text-base md:text-xl font-bold mb-4">
         Here are some of my projects
       </h2>
@@ -40,7 +32,10 @@ const projects = (await getCollection("project")).filter(
           {
             projects.map((post) => (
               <li class="border-2 dark:border-white border-black rounded-md p-4 flex md:flex-row flex-col gap-2 items-center justify-between">
-                <a class="w-full py-4 -my-4 pl-4 -ml-4" href={`/project/${post.slug}/`}>
+                <a
+                  class="w-full py-4 -my-4 pl-4 -ml-4"
+                  href={`/project/${post.slug}/`}
+                >
                   <h4 class="font-semibold">{post.data.title}</h4>
                   <p class="text-sm">{post.data.shortDescription}</p>
                 </a>
@@ -94,9 +89,7 @@ const projects = (await getCollection("project")).filter(
         </ul>
       </div>
     </div>
-    <div
-      class="w-full h-full border-2 dark:border-white border-black rounded-md dark:text-white p-4 md:col-span-2"
-    >
+    <div class="box md:col-span-2">
       <h2 class="text-base md:text-xl font-bold">Let's Get In Touch</h2>
       <h3 class="text-sm md:text-base">
         If you have any inquiries or want to hire me, don't hesitate to contact
