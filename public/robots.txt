@@ -6,4 +6,4 @@ Allow: /
 Host: https://imjustin.dev
 
 # Sitemaps
-Sitemap: https://imjustin.dev/sitemap.xml
+Sitemap: https://imjustin.dev/sitemap-index.xml

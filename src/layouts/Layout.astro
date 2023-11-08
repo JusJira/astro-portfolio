@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "@fontsource-variable/jetbrains-mono";
 
 const { title, description } = Astro.props;
 ---
@@ -9,18 +10,6 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <script is:inline>
-      // The configured mode is stored in local storage
-      const darkmode = localStorage.getItem("theme");
-      console.log(darkmode)
-
-      // Put dark class on html tag to enable dark mode
-      if (darkmode === "light") {
-        document.documentElement.classList.remove("dark");
-      } else {
-        document.documentElement.classList.add("dark");
-      }
-    </script>
   </head>
 
   <body class="dark:bg-neutral-800 bg-neutral-100 min-h-[100dvh]">
@@ -31,3 +20,8 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
+<style>
+  html,body {
+    font-family: "JetBrains Mono Variable", sans-serif;
+  }
+</style>

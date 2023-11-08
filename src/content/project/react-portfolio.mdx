@@ -1,0 +1,24 @@
+---
+title: "ReactJs Portfolio"
+description: "My old old, portfolio that is built with ReactJs"
+shortDescription: "Portfolio built with ReactJs"
+githubUrl: "https://github.com/JusJira/my-portfolio"
+featured: false
+---
+
+# Preview
+
+<div class="flex items-center justify-center">
+  <img src="/assets/images/old-portfolio.png"></img>
+</div>
+
+# Links
+
+<div class="flex flex-col">
+  {frontmatter.websiteUrl ? (
+    <a href={frontmatter.websiteUrl}>Live Website</a>
+  ) : null}
+  {frontmatter.githubUrl ? (
+    <a href={frontmatter.githubUrl}>Github Repo</a>
+  ) : null}
+</div>
