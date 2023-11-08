@@ -1,0 +1,25 @@
+---
+title: "QR Code Generator"
+description: "A QR code generator built with ReactJs that aims the be simple, just type in just link and done. No need for Ads or anything."
+shortDescription: "Simple QR Code Generator"
+githubUrl: "https://github.com/JusJira/react-qr-code-generator"
+websiteUrl: "https://qr.imjustin.dev"
+featured: true
+---
+
+# Preview
+
+<div class="flex items-center justify-center">
+  <img src="/assets/images/qrcode.jpeg"></img>
+</div>
+
+# Links
+
+<div class="flex flex-col">
+  {frontmatter.websiteUrl ? (
+    <a href={frontmatter.websiteUrl}>Live Website</a>
+  ) : null}
+  {frontmatter.githubUrl ? (
+    <a href={frontmatter.githubUrl}>Github Repo</a>
+  ) : null}
+</div>

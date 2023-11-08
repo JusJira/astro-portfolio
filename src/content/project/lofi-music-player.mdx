@@ -1,0 +1,25 @@
+---
+title: "Lofi Music Player"
+description: "Music turntable with customizable input, built with ReactJs"
+shortDescription: "Music turntable with customizable input"
+githubUrl: "https://github.com/JusJira/lofi-music-player"
+websiteUrl: "https://lofi.imjustin.dev"
+featured: false
+---
+
+# Preview
+
+<div class="flex items-center justify-center">
+  <img src="/assets/images/lofi-music-player.png"></img>
+</div>
+
+# Links
+
+<div class="flex flex-col">
+  {frontmatter.websiteUrl ? (
+    <a href={frontmatter.websiteUrl}>Live Website</a>
+  ) : null}
+  {frontmatter.githubUrl ? (
+    <a href={frontmatter.githubUrl}>Github Repo</a>
+  ) : null}
+</div>
