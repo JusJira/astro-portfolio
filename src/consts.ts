@@ -49,3 +49,18 @@ export const EDUCATION = [
     description: ["Science, Mathematics"],
   },
 ];
+
+export const CERTIFICATES = [
+  {
+    name: "Google Data Analysis",
+    source: "Google",
+    date: "2023",
+    thumbnail: "/assets/cert/Coursera-Data.png",
+  },
+  {
+    name: "Google Technical Support",
+    source: "Google",
+    date: "2023",
+    thumbnail: "/assets/cert/Coursera-IT.png",
+  },
+];
