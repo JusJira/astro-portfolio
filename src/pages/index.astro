@@ -37,7 +37,7 @@ const projects = (await getCollection("project")).filter(
                   href={`/project/${post.slug}/`}
                 >
                   <h3 class="font-semibold">{post.data.title}</h3>
-                  <p class="text-sm">{post.data.shortDescription}</p>
+                  <h4 class="text-sm">{post.data.shortDescription}</h4>
                 </a>
                 <div class="md:flex flex-row gap-3 hidden">
                   {post.data.githubUrl ? (
