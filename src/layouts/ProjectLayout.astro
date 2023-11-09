@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Layout from "./Layout.astro";
 
-type Props = CollectionEntry<"project">["data"];
+type Props = CollectionEntry<"projects">["data"];
 
 const { title, description } = Astro.props;
 import "../styles/project.css";
