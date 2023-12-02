@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Justin Jira";
 export const SITE_DESCRIPTION =
-  "Justin Jiraratsakul is a passionate engineering student and web developer with an interest in creating user-friendly and high-performance websites.";
+  "Justin Jiraratsakul is a passionate engineering student and web developer with an interest in creating user-friendly, modern, and high-performance websites.";
 export const EXPERIENCE = [
   {
     name: "Thinc's 10 Days Project 2023",
