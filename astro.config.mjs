@@ -10,6 +10,6 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: 'https://imjustin.dev',
   integrations: [mdx(), sitemap(), tailwind(), preact()],
-  output: "server",
+  output: "hybrid",
   adapter: cloudflare()
 });
