@@ -12,13 +12,14 @@ import ThemeIcon from "./ThemeIcon.astro";
     >
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
     </div>
     <ThemeIcon id="themeIcon" />
   </nav>
 </header>
 <style>
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     #themeIcon {
       grid-area: 1/2;
     }

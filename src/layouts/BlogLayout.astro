@@ -1,0 +1,22 @@
+---
+import moment from 'moment';
+import type { CollectionEntry } from "astro:content";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Layout from "./Layout.astro";
+
+const { title,heroImage } = Astro.props;
+import "../styles/project.css";
+---
+
+<Layout title={`${SITE_TITLE} - Blog`} description={SITE_DESCRIPTION}>
+  <article class="w-[720px] max-w-[calc(100%_-_2em)] dark:text-white m-auto">
+    <div>
+      <div class="my-10">
+        <h1 class="text-4xl font-bold text-center">{title}</h1>
+        <img class="m-auto mb-6 px-2 lg:px-10" src={import.meta.env.STRAPI_URL + heroImage.data.attributes.url}/>
+        <hr />
+      </div>
+      <slot />
+    </div>
+  </article>
+</Layout>

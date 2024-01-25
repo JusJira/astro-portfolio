@@ -1,0 +1,7 @@
+---
+import { marked } from 'marked';
+const { data } = Astro.props;
+const content = marked.parse(data);
+import DOMPurify from "isomorphic-dompurify";
+---
+<article set:html={DOMPurify.sanitize(content as string)} />
