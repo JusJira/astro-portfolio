@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import Layout from "../../layouts/Layout.astro";
 import fetchApi from "../../../lib/strapi";
@@ -9,7 +11,6 @@ const articles = await fetchApi<Article[]>({
   wrappedByKey: "data",
 });
 ---
-
 <Layout title={`${SITE_TITLE} - Projects`} description={SITE_DESCRIPTION}>
   <div class="p-2 max-w-[calc(100%_-_2em)] w-[750px] m-auto pt-10">
     <h1 class="dark:text-white font-bold text-xl text-center mb-10">

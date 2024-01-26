@@ -9,20 +9,21 @@ import cloudflare from "@astrojs/cloudflare";
 
 let adapter = cloudflare({
   mode: "advance",
-  functionPerRoute: true,
+  imageService: 'passthrough',
   routes: {
-    strategy: 'include',
-    include: ['/users/*'], // handled by custom function: functions/users/[id].js
-    exclude: ['/projects/*',"/about","/"], // handled by static page: pages/users/faq.astro
+    strategy: "include",
+    include: ["/blog/*", "/_image"], // handled by custom function: functions/users/[id].js
   },
 });
+let output = "hybrid";
 if (process.argv[3] === "--node" || process.argv[4] === "--node") {
   adapter = node({ mode: "standalone" });
+  output = "server";
 }
 // https://astro.build/config
 export default defineConfig({
   site: "https://imjustin.dev",
   integrations: [mdx(), sitemap(), tailwind(), preact()],
-  output: "server",
+  output: output,
   adapter: adapter,
 });
