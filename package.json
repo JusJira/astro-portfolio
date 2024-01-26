@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview",
+    "build:node": "astro check && astro build --node",
+    "preview": "astro preview --node",
     "astro": "astro"
   },
   "dependencies": {
@@ -14,6 +15,7 @@
     "@astrojs/cloudflare": "^9.0.0",
     "@astrojs/markdown-remark": "^4.2.0",
     "@astrojs/mdx": "^2.1.0",
+    "@astrojs/node": "^8.0.0",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.2",
     "@fontsource-variable/jetbrains-mono": "^5.0.18",
