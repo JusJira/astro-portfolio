@@ -7,7 +7,15 @@ import node from "@astrojs/node";
 
 import cloudflare from "@astrojs/cloudflare";
 
-let adapter = cloudflare({});
+let adapter = cloudflare({
+  mode: "directory",
+  functionPerRoute: true,
+  routes: {
+    strategy: 'include',
+    include: ['/users/*'], // handled by custom function: functions/users/[id].js
+    exclude: ['/projects/*',"/about","/"], // handled by static page: pages/users/faq.astro
+  },
+});
 if (process.argv[3] === "--node" || process.argv[4] === "--node") {
   adapter = node({ mode: "standalone" });
 }
