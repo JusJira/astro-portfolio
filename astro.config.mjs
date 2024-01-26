@@ -8,7 +8,7 @@ import node from "@astrojs/node";
 import cloudflare from "@astrojs/cloudflare";
 
 let adapter = cloudflare({
-  mode: "directory",
+  mode: "advance",
   functionPerRoute: true,
   routes: {
     strategy: 'include',
