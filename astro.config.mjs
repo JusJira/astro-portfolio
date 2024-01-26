@@ -11,5 +11,11 @@ export default defineConfig({
   site: 'https://imjustin.dev',
   integrations: [mdx(), sitemap(), tailwind(), preact()],
   output: "hybrid",
-  adapter: cloudflare()
+  adapter: cloudflare({
+    mode: 'directory',
+    routes: {
+      strategy: 'include',
+      include: ['/blog/*'], // handled by custom function: functions/users/[id].js
+    },
+})
 });
