@@ -1,17 +1,25 @@
 ---
-title: 'CU Pop BUS'
+title: "CU Pop BUS"
 description: "A simple website to show time schedule of CU POP Bus, I made it because I didn't like the layout that they provided so I made my own"
-shortDescription: 'A simple bus schedule website'
+shortDescription: "A simple bus schedule website"
 githubUrl: "https://github.com/JusJira/next-pop-bus"
 websiteUrl: "https://pop.jjus.dev"
 featured: true
 ---
+import { Image } from 'astro:assets';
+import webImage from '../../../public/assets/images/cu_pop_bus.png'
+
 # Preview
-<div class="flex items-center justify-center">
-<img src="/assets/images/cu_pop_bus.png" class="w-[50%]"></img>
+
+<div class="m-auto max-w-[360px]">
+  <Image
+    src={webImage}
+    alt="Website demo picture"
+  />
 </div>
 
 # Links
+
 <div class="flex flex-col">
   {frontmatter.websiteUrl ? (
     <a href={frontmatter.websiteUrl}>Live Website</a>
