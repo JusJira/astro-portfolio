@@ -6,11 +6,16 @@ githubUrl: "https://github.com/JusJira/lofi-music-player"
 websiteUrl: "https://lofi.imjustin.dev"
 featured: false
 ---
+import { Image } from 'astro:assets';
+import webImage from "../../../public/assets/images/lofi-music-player.png"
 
 # Preview
 
 <div class="flex items-center justify-center">
-  <img src="/assets/images/lofi-music-player.png"></img>
+<Image
+    src={webImage}
+    alt="Website demo picture"
+  />
 </div>
 
 # Links

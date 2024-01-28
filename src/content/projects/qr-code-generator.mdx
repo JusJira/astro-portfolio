@@ -6,11 +6,16 @@ githubUrl: "https://github.com/JusJira/react-qr-code-generator"
 websiteUrl: "https://qr.imjustin.dev"
 featured: true
 ---
+import { Image } from 'astro:assets';
+import webImage from "../../../public/assets/images/qrcode.jpeg";
 
 # Preview
 
 <div class="flex items-center justify-center">
-  <img src="/assets/images/qrcode.jpeg"></img>
+<Image
+    src={webImage}
+    alt="Website demo picture"
+  />
 </div>
 
 # Links

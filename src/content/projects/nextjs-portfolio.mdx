@@ -6,9 +6,15 @@ githubUrl: "https://github.com/JusJira/next-portfolio"
 websiteUrl: "https://legacy.imjustin.dev"
 featured: true
 ---
+import { Image } from 'astro:assets';
+import webImage from "../../../public/assets/images/nextjs_portfolio.png"
+
 # Preview
-<div class="flex items-center justify-center">
-<img src="/assets/images/nextjs_portfolio.png" class="w-[80%]"></img>
+<div class="flex items-center justify-center max-w-[600px] m-auto">
+<Image
+    src={webImage}
+    alt="Website demo picture"
+  />
 </div>
 
 # Links
