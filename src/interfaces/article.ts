@@ -9,6 +9,21 @@ export default interface Article {
         id: number;
         attributes: {
           url: string;
+          formats: {
+            large: {
+              url: string
+            },
+            medium: {
+              url: string
+            },
+            small: {
+              url: string
+            },
+            thumbnail: {
+              url: string
+            },
+
+          }
         };
       };
     };
