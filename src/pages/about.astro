@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import {
   SITE_TITLE,
   SITE_DESCRIPTION,
@@ -7,16 +8,17 @@ import {
   CERTIFICATES,
 } from "../consts";
 import Layout from "../layouts/Layout.astro";
+import handsomeGuy from "../assets/images/handsomeGuy.png"
 ---
 
 <Layout title={`${SITE_TITLE} - About Me`} description={SITE_DESCRIPTION}>
   <div class="w-[750px] max-w-[calc(100%_-_2em)] m-auto mt-10">
     <div class="flex w-full justify-center relative">
-      <img
+      <Image
         alt="Profile Image"
-        width="400px"
-        height="400px"
-        src="/assets/images/handsomeGuy.png"
+        width={400}
+        height={400}
+        src={handsomeGuy}
         class="object-cover object-center w-[400px] h-[400px]"
       />
       <div class="relative top-10 right-[120px]">
