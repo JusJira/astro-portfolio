@@ -1,0 +1,23 @@
+---
+title: "ESP8266 & DHT22 IoT"
+description: "A circuit to connect DHT22 sensor to the ESP8266 and to publish data from the microcontroller to a Database via MQTT"
+shortDescription: "A simple IoT device using DHT22 with ESP8266 microcontroller"
+githubUrl: "https://github.com/JusJira/iot-esp8266"
+websiteUrl: "https://iot.jjus.dev"
+featured: false
+---
+import { Image } from 'astro:assets';
+
+# Description
+A simple circuit and code to connect the ESP8266 and DHT22 sensors together, to connect it to the internet, and to send data from the IoT device to a database hosted on my VPS running on Docker to keep and process that data and to be able to fetch it from the database to show on a [dashboard](/projects/iot-dashboard).
+
+# Links
+
+<div class="flex flex-col">
+  {frontmatter.websiteUrl ? (
+    <a href={frontmatter.websiteUrl}>Dashboard Website</a>
+  ) : null}
+  {frontmatter.githubUrl ? (
+    <a href={frontmatter.githubUrl}>Github Repo</a>
+  ) : null}
+</div>
