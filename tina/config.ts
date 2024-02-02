@@ -29,15 +29,35 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "blog",
+        label: "Blog",
+        path: "src/content/blog",
+        format: "mdx",
         fields: [
           {
             type: "string",
             name: "title",
             label: "Title",
             isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "heroImage",
+            label: "Hero Image",
+            required: true,
+          },
+
+          {
+            type: "boolean",
+            name: "featured",
+            label: "Featured",
             required: true,
           },
           {
