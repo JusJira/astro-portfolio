@@ -1,14 +1,10 @@
 ---
-export const prerender = false;
-
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
 const blog = await getCollection("blog");
-const catFetch = await fetch('https://api.thecatapi.com/v1/images/search')
-const catData = await catFetch.json()
 import "@fontsource-variable/open-sans";
 ---
 
@@ -22,7 +18,7 @@ import "@fontsource-variable/open-sans";
         blog.length == 0 ? (
           <div class="m-auto dark:text-white flex flex-col items-center justify-center">
             <p class="text-center">Nothing for now, So here is a picture of a cat instead!</p>
-            <img src={catData[0].url}>
+            <img src="https://http.cat/501">
           </div>
         ) : null
       }
