@@ -13,15 +13,7 @@ import "@fontsource-variable/open-sans";
     <h1 class="dark:text-white font-bold text-xl text-center mb-10">
       Here are my blogs, enjoy!
     </h1>
-    <div class="grid gap-3 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
-      {
-        blog.length == 0 ? (
-          <div class="m-auto dark:text-white flex flex-col items-center justify-center">
-            <p class="text-center">Nothing for now, So here is a picture of a cat instead!</p>
-            <img src="https://http.cat/501">
-          </div>
-        ) : null
-      }
+    <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
       {
         blog.map((article) => (
           <a
