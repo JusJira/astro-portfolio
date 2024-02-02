@@ -3,12 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "tinacms dev -c \"astro dev\"",
+    "dev": "astro dev",
     "start": "astro dev",
-    "build": "tinacms build && astro build",
-    "build:node": "astro build --node",
-    "preview": "astro preview --node",
-    "preview:cloudflare": "wrangler pages dev ./dist",
+    "build": "astro check && astro build",
     "astro": "astro"
   },
   "dependencies": {
