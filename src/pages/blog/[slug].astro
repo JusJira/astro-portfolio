@@ -1,6 +1,7 @@
 ---
+export const prerender = true;
+
 import { type CollectionEntry, getCollection } from 'astro:content';
-import ProjectLayout from '../../layouts/ProjectLayout.astro';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
 export async function getStaticPaths() {
