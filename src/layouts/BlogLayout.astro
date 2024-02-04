@@ -1,11 +1,12 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Layout from "./Layout.astro";
-const { title, heroImage } = Astro.props;
+const { title, heroImage, description, datePublished} = Astro.props;
 import "../styles/project.css";
+import FormattedDate from "../components/FormattedDate.astro";
 ---
 
-<Layout title={`${SITE_TITLE} - Blog`} description={SITE_DESCRIPTION}>
+<Layout title={`${SITE_TITLE} - Blog`} description={description}  image={heroImage}>
   <article class="w-[720px] max-w-[calc(100%_-_2em)] dark:text-white m-auto">
     <div>
       <div class="my-10">
@@ -14,6 +15,7 @@ import "../styles/project.css";
           class="m-auto mb-6"
           src={heroImage}
         />
+        <FormattedDate date={datePublished}/>
         <hr />
       </div>
       <slot />
