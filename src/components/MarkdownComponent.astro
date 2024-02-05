@@ -1,6 +1,0 @@
----
-import { marked } from 'marked';
-const { data } = Astro.props;
-const content = marked.parse(data);
----
-<article set:html={content} />
