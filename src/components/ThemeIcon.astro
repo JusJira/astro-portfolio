@@ -61,7 +61,25 @@ const { ...props } = Astro.props;
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
+  function themeSet(document) {
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }
+
   document
     .getElementById("themeToggle")
     .addEventListener("click", handleToggleClick);
+
+  document.addEventListener("astro:before-swap", (ev) => {
+    themeSet(ev.newDocument);
+  });
+  document.addEventListener("astro:after-swap", () =>
+    document
+      .getElementById("themeToggle")
+      .addEventListener("click", handleToggleClick)
+  );
 </script>
