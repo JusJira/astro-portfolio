@@ -65,4 +65,10 @@ export const CERTIFICATES = [
     thumbnail: "/assets/cert/Coursera-C++.png",
     url: "https://coursera.org/verify/DKZSELSNQHJ9",
   },
+  {
+    name: "10 Days Project 2023",
+    source: "Thinc",
+    date: "2023",
+    thumbnail: "/assets/cert/10daysproject2023.png",
+  },
 ];
