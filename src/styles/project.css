@@ -20,6 +20,10 @@ h4 {font-size: 1.266rem;}
 
 h5 {font-size: 1.125rem;}
 
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
 
 a {
     @apply underline dark:text-green-400 text-sky-600 underline-offset-1
