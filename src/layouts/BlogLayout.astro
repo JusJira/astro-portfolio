@@ -16,7 +16,7 @@ import { Image } from "astro:assets";
     <div>
       <div class="my-10">
         <h1 class="text-4xl font-bold text-center">{title}</h1>
-        <Image class="m-auto mb-6" src={heroImage} alt="Hero Image" width={1200} height={630}/>
+        <Image class="m-auto mb-6" src={heroImage} alt="Hero Image" title="Blog hero image" width={1200} height={630} loading="eager"/>
         <FormattedDate date={datePublished} />
         <div class="text-base my-4">
           <span class="font-semibold">Description:</span><p>{description}</p>
