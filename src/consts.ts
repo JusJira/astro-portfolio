@@ -52,15 +52,23 @@ export const EDUCATION = [
 
 export const CERTIFICATES = [
   {
-    name: "Google Data Analysis",
+    name: "Google Data Analytics",
     source: "Google",
     date: "2023",
     thumbnail: "/assets/cert/Coursera-Data.png",
+    url: "https://coursera.org/verify/professional-cert/S3TRSS5JBEWL",
   },
   {
-    name: "Google Technical Support",
-    source: "Google",
+    name: "Object-Oriented Data Structures in C++",
+    source: "University of Illinois at Urbana-Champaign",
+    date: "2024",
+    thumbnail: "/assets/cert/Coursera-C++.png",
+    url: "https://coursera.org/verify/DKZSELSNQHJ9",
+  },
+  {
+    name: "10 Days Project 2023",
+    source: "Thinc",
     date: "2023",
-    thumbnail: "/assets/cert/Coursera-IT.png",
+    thumbnail: "/assets/cert/10daysproject2023.png",
   },
 ];

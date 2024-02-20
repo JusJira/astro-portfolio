@@ -9,19 +9,21 @@ const projects = (await getCollection("projects")).filter(
 
 <Layout title={`${SITE_TITLE} - Portfolio`} description={SITE_DESCRIPTION}>
   <div
-    class="h-full grid md:grid-cols-5 md:grid-rows-2 md:p-16 md:gap-10 p-4 gap-4"
+    class="h-full grid md:grid-cols-5 md:grid-rows-2 md:p-16 md:gap-8 p-4 gap-4"
   >
-    <div class="box dark:text-white p-4 md:col-span-2">
+    <div class="flex flex-col box dark:text-white p-4 md:col-span-2">
       <h1>
         <span class="text-sm md:text-base">Hi i'm{" "}</span>
         <br /><span
-          class="text-2xl md:text-3xl p-1 font-bold bg-gradient-to-r from-violet-500 to-red-400 via-fuchsia-500 bg-clip-text text-transparent"
+          class="mt-4 text-2xl md:text-3xl p-1 font-bold bg-gradient-to-r from-violet-500 to-red-400 via-fuchsia-500 bg-clip-text text-transparent"
           >Justin Jiraratsakul</span
         >
       </h1>
-      <h2 class="text-lg text-center mt-1">
-        I love Coding, Tinkering and Having Fun
-      </h2>
+      <div class="h-full flex flex-col justify-center items-center">
+        <h2 class="text-lg">
+          I love Coding, Tinkering and Having Fun
+        </h2>
+      </div>
     </div>
     <div class="box md:col-span-3 md:row-span-2">
       <h2 class="text-base md:text-xl font-bold mb-4">
