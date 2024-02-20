@@ -1,29 +1,22 @@
 ---
-export const prerender = false;
+export const prerender = true;
 
-import fetchApi from '../../../lib/strapi';
-import MarkdownComponent from '../../components/MarkdownComponent.astro';
-import type Article from '../../interfaces/article';
+import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
-const { slug } = Astro.params;
-
-let article: Article;
-
-try {
-  article = await fetchApi<Article>({
-    endpoint: 'articles?populate=heroImage',
-    wrappedByKey: 'data',
-    wrappedByList: true,
-    query: {
-      'filters[slug][$eq]': slug || '',
-    },
-  });
-} catch (error) {
-  return Astro.redirect('/404');
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
 }
+type Props = CollectionEntry<'blog'>;
 
+const post = Astro.props;
+const { Content } = await post.render();
 ---
-<BlogLayout {...article.attributes}>
-	<MarkdownComponent data={article.attributes.content}/>
+
+<BlogLayout {...post.data}>
+	<Content />
 </BlogLayout>
