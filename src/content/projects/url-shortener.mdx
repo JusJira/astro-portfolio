@@ -1,0 +1,35 @@
+---
+title: "URL Shortener"
+description: "URL shortener with no ADS and uses Cloudflare Wokers and KV to store the data"
+shortDescription: "URL Shortener built with NextJs and Cloudflare Workers"
+websiteUrl: "https://jjus.dev"
+featured: true
+---
+
+import { Image } from "astro:assets";
+import webImageDark from "../../assets/images/url-shortener.jpeg";
+import webImageLight from "../../assets/images/url-shortener-light.jpeg";
+
+# Preview
+
+<div class="flex flex-col gap-4 items-center justify-center">
+  <Image src={webImageDark} alt="Website demo picture in Dark Mode" />
+  <Image src={webImageLight} alt="Website demo picture in Light Mode" />
+</div>
+
+# Description
+
+A simple URL shortener built with NextJs and Cloudflare Workers. It uses Cloudflare KV to store the data. It has no ADS and is completely free to use. Totally anonymous and no tracking. The link exiration is set to 24 hours. And it is deployed on Cloudflare Workers.
+
+It gives you a 4 character long URL (Ex. https://jjus.dev/abcd). It is not customizable. Also given is a QR code of the URL for easy sharing.
+
+# Links
+
+<div class="flex flex-col">
+  {frontmatter.websiteUrl ? (
+    <a href={frontmatter.websiteUrl}>Live Website</a>
+  ) : null}
+  {frontmatter.githubUrl ? (
+    <a href={frontmatter.githubUrl}>Github Repo</a>
+  ) : null}
+</div>
