@@ -14,14 +14,12 @@ import usbport from "../../assets/images/byd-downgrade/usbport.png";
 import versionScreen from "../../assets/images/byd-downgrade/versionScreen.png";
 
 ## Introduction
-
 In this tutorial I will show you how to downgrade BYD Seal from V1.1 (2310) to V1 (2307). This will bring back the ability to install apps in the car's screen.
 
-<h3 class='m-0 text-red-600'>Warning</h3>
+<h3 class='text-red-600'>Warning</h3>
 <p class='dark:text-red-400 text-red-600'>This process might brick your car's screen. Do it at your own risk. I am not responsible for any damage caused by this process.</p>
 
 ## Requirements
-
 1. A USB drive with at least 8GB of storage.
 2. A computer with internet access.
 3. Firmware file.
@@ -36,20 +34,20 @@ Now plug in your USB drive and format it to FAT32 or exFAT, inside it create a f
 
 Make sure the file structure looks like this:
 
-`BYDUpdatePackage/msm8953_64/UpdateFull.zip`
+- BYDUpdatePackage
+  - msm8953_64
+    - UpdateFull.zip
 
 ## Downgrading
 
 Now that we have the USB drive ready, we can start the downgrade process.Go in your car and plug in the USB drive in the USB port.
 
 <Image src={usbport} alt="USB Port Position" title="BYD Seal USB port position"/>
-<br />
 If you have put the file in correctly you should see a pop up in the car saying
 that you can downgrade. Click on the pop up and the car will start the downgrade
 process.
 
 <Image src={upgradeStart} alt="Upgrade Start" title="BYD Seal upgrade screen"/>
-<br/>
 Now you just have to wait for the process to finish. It will take around 30 minutes to 1 hour to complete.
 <Image src={upgradingProcess} alt="Upgrading Process" title="BYD Seal upgrade process"/>
 <p class='text-center mt-1'>You have to wait for this screen to reach 100%</p>
@@ -57,7 +55,6 @@ Now you just have to wait for the process to finish. It will take around 30 minu
 When it finishes you will see a screen like this.
 
 <Image src={doneUpgrade} alt="Done Upgrading" title="BYD Seal done upgrading screen"/>
-<br/>
 As you can see here the version is now V1 (2307).
 <Image src={versionScreen} alt="Version Screen" title="BYD Seal version details screen"/>
 
