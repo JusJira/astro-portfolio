@@ -6,6 +6,10 @@ import { Image } from "astro:assets";
 
 const blog = await getCollection("blog");
 import "@fontsource-variable/open-sans";
+
+blog.sort(
+  (a, b) => b.data.datePublished.valueOf() - a.data.datePublished.valueOf()
+);
 ---
 
 <Layout title={`${SITE_TITLE} - Projects`} description={SITE_DESCRIPTION}>
@@ -20,17 +24,15 @@ import "@fontsource-variable/open-sans";
             href={`/blog/${article.slug}/`}
             class="dark:text-white text-black dark:bg-stone-900 bg-white relative rounded-lg hover:scale-105 transition-transform duration-100"
           >
-          <div>
-            <Image
-              src={
-                article.data.heroImage
-              }
-              class="aspect-video rounded-t-lg"
-              width={1600}
-              height={900}
-              alt="Blog post hero image"
-            />
-          </div>
+            <div>
+              <Image
+                src={article.data.heroImage}
+                class="aspect-video rounded-t-lg"
+                width={1600}
+                height={900}
+                alt="Blog post hero image"
+              />
+            </div>
             <div class="w-full flex flex-col justify-end p-4 rounded-b-lg">
               <h2 class="font-semibold text-lg" id="title">
                 {article.data.title}
