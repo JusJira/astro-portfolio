@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+    id="Docker-Logo--Streamline-Logos" height="24" width="24">
+    <desc>Docker Logo Streamline Icon: https://streamlinehq.com</desc>
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        d="M9.3275 21.0872C4.3776 21.0872 0.7748 17.8799 0.7748 13.0691C0.7641 12.7943 1.0357 12.5345 1.3094 12.5345H15.7419C17.8801 12.5345 18.0255 9.8971 18.0255 9.8971C16.5608 7.945 18.2147 6.7166 18.2147 6.7166S20.8756 6.9839 20.3871 9.4257C21.7148 8.8633 22.7176 9.0461 23.2255 10.3953C22.7176 11.7477 21.1375 12.4715 19.8087 11.907C19.8087 17.03 14.4494 21.0871 9.3275 21.0871Z"
+        stroke-width="1"></path>
+    <path stroke="currentColor" stroke-linejoin="round"
+        d="M12.0001 12.5345H15.2074V9.3273H12.0001V12.5345Z" stroke-width="1"></path>
+    <path stroke="currentColor" stroke-linejoin="round"
+        d="M8.7929 12.5345H12.0001V9.3273H8.7929V12.5345Z" stroke-width="1"></path>
+    <path stroke="currentColor" stroke-linejoin="round"
+        d="M5.5857 12.5345H8.7929V9.3273H5.5857V12.5345Z"
+        stroke-width="1"></path>
+    <path stroke="currentColor" stroke-linejoin="round"
+        d="M8.7929 9.3273H12.0001V6.1201H8.7929V9.3273Z"
+        stroke-width="1"></path>
+    <path stroke="currentColor" stroke-linejoin="round"
+        d="M8.7929 6.1201H12.0001V2.9128H8.7929V6.1201Z"
+        stroke-width="1"></path>
+    <path stroke="currentColor" stroke-linejoin="round"
+        d="M5.5857 9.3273H8.7929V6.1201H5.5857V9.3273Z"
+        stroke-width="1"></path>
+    <path stroke="currentColor" stroke-linejoin="round"
+        d="M2.3785 12.5345H5.5857V9.3273H2.3785V12.5345Z"
+        stroke-width="1"></path>
+</svg>
