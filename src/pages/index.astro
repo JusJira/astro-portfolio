@@ -6,7 +6,12 @@ const projects = (await getCollection("projects")).filter(
   (a) => a.data.featured
 );
 
-import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+import nextjsIcon from "../icons/nextjs-icon.svg";
+import reactjsIcon from "../icons/reactjs-icon.svg";
+import svelteIcon from "../icons/svelte-icon.svg";
+import pythonIcon from "../icons/python-icon.svg";
 ---
 
 <Layout title={`${SITE_TITLE} - Portfolio`} description={SITE_DESCRIPTION}>
@@ -28,26 +33,16 @@ import { Icon } from "astro-icon/components";
         <div
           class="dark:text-white grid grid-cols-4 lg:grid-cols-2 h-full m-auto gap-1 w-max"
         >
-          <img
-            src="../../src/icons/nextjs-icon.svg"
-            alt="Next.js"
-            class="size-14 sm:size-20"
-          />
-          <img
-            src="../../src/icons/reactjs-icon.svg"
+          <Image src={nextjsIcon} alt="Next.js" class="size-14 sm:size-20" />
+          <Image
+            src={reactjsIcon}
             alt="React.js"
             class="size-14 sm:size-20"
-          />
-          <img
-            src="../../src/icons/svelte-icon.svg"
+          /><Image
+            src={svelteIcon}
             alt="SvelteKit"
             class="size-14 sm:size-20"
-          />
-          <img
-            src="../../src/icons/python-icon.svg"
-            alt="SvelteKit"
-            class="size-14 sm:size-20"
-          />
+          /><Image src={pythonIcon} alt="Python" class="size-14 sm:size-20" />
         </div>
       </div>
       <div class="box lg:col-span-3 lg:row-span-2">
