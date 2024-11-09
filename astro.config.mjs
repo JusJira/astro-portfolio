@@ -7,6 +7,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: true,
   site: "https://imjustin.dev",
   integrations: [mdx(), sitemap(), tailwind(), preact(), icon()],
   redirects: {
