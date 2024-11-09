@@ -6,26 +6,24 @@ interface Props {
   description: string;
   image: string;
 }
-import "../styles/global.css"
+import "../styles/global.css";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image } = Astro.props;
-import { ViewTransitions } from 'astro:transitions';
-
+// import { ViewTransitions } from 'astro:transitions';
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <meta name="generator" content={Astro.generator} />
 <meta name="theme-color" content="#f5f5f5" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -49,9 +47,15 @@ import { ViewTransitions } from 'astro:transitions';
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 <!-- Umami Analytics -->
-<script async src="https://analytics.eu.umami.is/script.js" data-website-id="51d32a71-8eb0-414f-82f2-6acbaffee454" is:inline></script>
+<script
+  async
+  src="https://analytics.eu.umami.is/script.js"
+  data-website-id="51d32a71-8eb0-414f-82f2-6acbaffee454"
+  is:inline></script>
 <!-- Cloudflare Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e2bd0908963e472ca445eeb1ee771c35"}'></script>
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "e2bd0908963e472ca445eeb1ee771c35"}'></script>
 
-
-<ViewTransitions />
+<!-- <ViewTransitions /> -->
