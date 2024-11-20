@@ -1,15 +1,19 @@
 ---
-export const prerender =  true;
+export const prerender = true;
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
-const projects = await getCollection("projects");
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
 ---
 
 <Layout title={`${SITE_TITLE} - Projects`} description={SITE_DESCRIPTION}>
   <div class="p-2 max-w-[calc(100%_-_2em)] w-[750px] m-auto mt-10">
-    <h1 class="dark:text-white font-bold text-xl text-center mb-10">Here are my personal projects</h1>
+    <h1 class="dark:text-white font-bold text-xl text-center mb-10">
+      Here are my personal projects
+    </h1>
     <ul class="flex gap-3 flex-col dark:text-white">
       {
         projects.map((post) => (
