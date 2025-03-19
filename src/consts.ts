@@ -5,6 +5,26 @@ export const SITE_TITLE = "Justin Jira";
 export const SITE_DESCRIPTION =
   "Justin Jiraratsakul is a passionate engineering student and web developer with an interest in creating user-friendly, modern, and high-performance websites.";
 export const EXPERIENCE = [
+  // {
+  //   name: "Software Engineer Part-time",
+  //   location: "API Plus Tech, Bangkok, Thailand",
+  //   date: "Jan 2025 - May 2025",
+  //   description: [
+  //     "- Software development using SvelteKit, TailwindCSS, and GraphQL",
+  //     "- Used Tilt.dev for local kubernetes development",
+  //     "- Integrated robust authentication using Ory Kratos",
+  //   ],
+  // },
+  {
+    name: "Software Engineer Intern",
+    location: "API Plus Tech, Bangkok, Thailand",
+    date: "Jun 2024 - Jul 2024",
+    description: [
+      "- Software development using SvelteKit, TailwindCSS, and GraphQL",
+      "- Used Tilt.dev for local kubernetes development",
+      "- Integrated robust authentication using Ory Kratos",
+    ],
+  },
   {
     name: "Thinc's 10 Days Project 2023",
     location: "Chulalongkorn University, Thailand",
