@@ -10,15 +10,16 @@ import "../styles/project.css";
 ---
 
 <Layout title={`${SITE_TITLE} - Projects`} description={SITE_DESCRIPTION}>
-  <article class="w-[720px] max-w-[calc(100%_-_2em)] dark:text-white m-auto">
+  <article class="w-[48rem] max-w-[calc(100%_-_2em)] dark:text-white m-auto">
     <div>
       <div class="my-10">
-        <div class="text-center dark:text-neutral-300 text-neutral-600 font-thin">
+        <div
+          class="text-center dark:text-neutral-300 text-neutral-600 font-thin"
+        >
         </div>
         <h1 class="text-4xl font-bold text-center">{title}</h1>
         <p>{description}</p>
         <hr />
-
       </div>
       <slot />
     </div>

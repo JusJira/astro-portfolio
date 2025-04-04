@@ -2,7 +2,6 @@
 import { SITE_TITLE } from "../consts";
 import Layout from "./Layout.astro";
 const { title, heroImage, description, datePublished } = Astro.props;
-// import "../styles/project.css";
 import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
 ---
@@ -12,7 +11,7 @@ import { Image } from "astro:assets";
   description={description}
   image={heroImage}
 >
-  <article class="w-[720px] max-w-[calc(100%_-_2em)] dark:text-white m-auto">
+  <article class="w-[48rem] max-w-[calc(100%_-_2em)] dark:text-white m-auto">
     <div>
       <div class="my-10">
         <h1 class="text-2xl lg:text-4xl font-bold text-center">{title}</h1>
@@ -31,7 +30,7 @@ import { Image } from "astro:assets";
         </div>
         <hr />
       </div>
-      <div class="prose prose-neutral dark:prose-invert">
+      <div class="prose prose-neutral dark:prose-invert max-w-none">
         <slot />
       </div>
     </div>
