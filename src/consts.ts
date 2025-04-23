@@ -72,6 +72,13 @@ export const EDUCATION = [
 
 export const CERTIFICATES = [
   {
+    name: "Object-Oriented Data Structures in C++",
+    source: "University of Illinois at Urbana-Champaign",
+    date: "2024",
+    thumbnail: "/assets/cert/Coursera-C++.png",
+    url: "https://coursera.org/verify/DKZSELSNQHJ9",
+  },
+  {
     name: "Google Data Analytics",
     source: "Google",
     date: "2023",
@@ -79,11 +86,19 @@ export const CERTIFICATES = [
     url: "https://coursera.org/verify/professional-cert/S3TRSS5JBEWL",
   },
   {
-    name: "Object-Oriented Data Structures in C++",
-    source: "University of Illinois at Urbana-Champaign",
-    date: "2024",
-    thumbnail: "/assets/cert/Coursera-C++.png",
-    url: "https://coursera.org/verify/DKZSELSNQHJ9",
+    name: "Technical Support Fundamentals",
+    source: "Google",
+    date: "2023",
+    thumbnail: "/assets/cert/Coursera-IT.png",
+    url: "https://coursera.org/verify/K7V6CYZBTFFJ",
+  },
+
+  {
+    name: "Scientific Computing with Python",
+    source: "freeCodeCamp",
+    date: "2023",
+    thumbnail: "/assets/cert/freeCodeCamp-Python.png",
+    url: "https://www.freecodecamp.org/certification/jusjira/scientific-computing-with-python-v7",
   },
   {
     name: "10 Days Project 2023",
