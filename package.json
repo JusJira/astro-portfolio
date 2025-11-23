@@ -16,9 +16,12 @@
     "@astrojs/node": "^9.5.1",
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@fontsource-variable/montserrat": "^5.2.8",
     "@fontsource-variable/open-sans": "^5.2.7",
+    "@lucide/astro": "^0.554.0",
     "astro": "^5.16.0",
     "preact": "^10.27.2",
+    "rough-notation": "^0.5.1",
     "sharp": "^0.33.5",
     "typescript": "^5.9.3",
     "vite": "^6.4.1"

@@ -1,0 +1,32 @@
+---
+import { Link, Bus, QrCode, Disc3 } from "@lucide/astro";
+import type { IconName } from "../content/config";
+
+interface Props {
+  name: string;
+  iconName: IconName;
+  href: string;
+}
+
+const { name, iconName, href } = Astro.props;
+
+const iconMap = {
+  link: Link,
+  bus: Bus,
+  qrCode: QrCode,
+  disc3: Disc3,
+} as const;
+
+const Icon = iconMap[iconName] || Link;
+---
+
+<a
+  class="dark:bg-neutral-800 rounded-md flex flex-row items-center gap-2 justify-center p-2 hover:dark:bg-neutral-700 cursor-pointer"
+  href={href}
+>
+  <div class="border-r p-1">
+    <Icon size="16" />
+  </div>
+  <span class="text-base text-center text-white font-semibold px-1">{name}</span
+  >
+</a>

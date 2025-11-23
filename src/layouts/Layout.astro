@@ -3,17 +3,19 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/open-sans";
+import "@fontsource-variable/montserrat";
 const { title, description, image = "/OG-Image.png" } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image}/>
+    <BaseHead title={title} description={description} image={image} />
   </head>
 
-  <body class="dark:bg-neutral-800 bg-neutral-100 min-h-[100dvh] flex flex-col">
+  <body class="bg-neutral-950 min-h-[100dvh] flex flex-col dark">
     <Header />
-    <main class="flex-auto flex flex-col items-center justify-center">
+    <main class="flex flex-col items-center max-w-5xl mx-auto">
       <slot />
     </main>
     <Footer />
@@ -21,6 +23,6 @@ const { title, description, image = "/OG-Image.png" } = Astro.props;
 </html>
 <style>
   body {
-    font-family: "JetBrains Mono Variable", sans-serif;
+    font-family: "Montserrat Variable", sans-serif;
   }
 </style>
