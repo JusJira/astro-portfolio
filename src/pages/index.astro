@@ -11,16 +11,19 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 <script>
   import { annotate } from "rough-notation";
-  const e = document.getElementById("software-developer");
-  if (e) {
-    const annotation = annotate(e, {
+
+  document.fonts.ready.then(() => {
+    const el = document.getElementById("software-developer");
+    if (!el) return;
+    const annotation = annotate(el, {
       type: "underline",
       color: "#F59E0B",
       strokeWidth: 2,
       padding: 2,
     });
+
     annotation.show();
-  }
+  });
 </script>
 
 <Layout title={`${SITE_TITLE} - Portfolio`} description={SITE_DESCRIPTION}>
