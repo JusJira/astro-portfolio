@@ -10,19 +10,20 @@ import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <script>
-  import { annotate } from "rough-notation";
+  document.addEventListener("DOMContentLoaded", async () => {
+    const { annotate } = await import("rough-notation");
+    document.fonts.ready.then(() => {
+      const el = document.getElementById("software-developer");
+      if (!el) return;
+      const annotation = annotate(el, {
+        type: "underline",
+        color: "#F59E0B",
+        strokeWidth: 2,
+        padding: 2,
+      });
 
-  document.fonts.ready.then(() => {
-    const el = document.getElementById("software-developer");
-    if (!el) return;
-    const annotation = annotate(el, {
-      type: "underline",
-      color: "#F59E0B",
-      strokeWidth: 2,
-      padding: 2,
+      annotation.show();
     });
-
-    annotation.show();
   });
 </script>
 

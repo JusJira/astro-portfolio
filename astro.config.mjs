@@ -9,8 +9,4 @@ export default defineConfig({
   prefetch: true,
   site: "https://imjustin.dev",
   integrations: [mdx(), sitemap(), tailwind(), preact()],
-  redirects: {
-    "/cu-future-classroom":
-      "https://docs.google.com/forms/d/e/1FAIpQLSfcFRh0Qn5FMI7ScVR6PaI-hd91bRZ8BdfvitXUMoBOsR68WQ/viewform?usp=sf_link",
-  },
 });
