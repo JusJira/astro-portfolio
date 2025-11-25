@@ -2,15 +2,21 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "@fontsource-variable/jetbrains-mono";
-import "@fontsource-variable/open-sans";
-import "@fontsource-variable/montserrat";
+import "@fontsource-variable/ubuntu-sans-mono";
+import ubuntuSansMonoWoff2 from "@fontsource-variable/ubuntu-sans-mono/files/ubuntu-sans-mono-latin-wght-normal.woff2?url";
 const { title, description, image = "/OG-Image.png" } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} image={image} />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={ubuntuSansMonoWoff2}
+      crossorigin="anonymous"
+    />
   </head>
 
   <body class="bg-neutral-950 min-h-[100dvh] flex flex-col dark">
@@ -23,6 +29,6 @@ const { title, description, image = "/OG-Image.png" } = Astro.props;
 </html>
 <style>
   body {
-    font-family: "Montserrat Variable", sans-serif;
+    font-family: "Ubuntu Sans Mono Variable", monospace;
   }
 </style>

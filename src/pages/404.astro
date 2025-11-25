@@ -1,15 +1,23 @@
 ---
-import "../styles/global.css"
-import "@fontsource-variable/jetbrains-mono";
+import "../styles/global.css";
 ---
+
 <html lang="en">
   <head>
     <title>Not found</title>
   </head>
-  <body class="dark:bg-neutral-900 flex flex-col items-center justify-center min-h-[100dvh]">
+  <body
+    class="dark:bg-neutral-900 flex flex-col items-center justify-center min-h-[100dvh]"
+  >
     <span class="dark:text-white text-black font-bold text-[10rem]">404</span>
-    <p class="dark:text-white text-black text-xl">Sorry, this page does not exist.</p>
-    <button id="goHome" class="dark:text-white text-black text-xl border-2 rounded-lg p-2 mt-10 dark:border-white border-black">Home</button>
+    <p class="dark:text-white text-black text-xl">
+      Sorry, this page does not exist.
+    </p>
+    <button
+      id="goHome"
+      class="dark:text-white text-black text-xl border-2 rounded-lg p-2 mt-10 dark:border-white border-black"
+      >Home</button
+    >
   </body>
 </html>
 
@@ -34,11 +42,5 @@ import "@fontsource-variable/jetbrains-mono";
 
   document
     .getElementById("goHome")
-    .addEventListener("click", () => window.location = '/');
+    .addEventListener("click", () => (window.location = "/"));
 </script>
-
-<style>
-  body {
-    font-family: "JetBrains Mono Variable", sans-serif;
-  }
-</style>
