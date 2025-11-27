@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .box {
   @apply w-full h-full dark:bg-neutral-900 bg-white shadow-xl rounded-md dark:text-white p-6;
 }

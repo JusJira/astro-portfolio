@@ -1,14 +1,18 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header class="flex flex-col items-center max-w-5xl mx-auto w-full">
-  <div class="md:px-16 px-4 mt-4 md:mt-16 w-full">
-    <nav>
+  <div
+    class="md:px-16 px-4 mt-4 md:mt-16 w-full flex justify-between items-center"
+  >
+    <nav class="w-fit">
       <HeaderLink href="/">home</HeaderLink>
       <HeaderLink href="/projects">projects</HeaderLink>
       <HeaderLink href="/blog">blog</HeaderLink>
       <HeaderLink href="/about">about</HeaderLink>
     </nav>
+    <ThemeIcon />
   </div>
 </header>

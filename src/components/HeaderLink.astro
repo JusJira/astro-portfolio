@@ -22,6 +22,7 @@ const isActive =
   class:list={[className, { active: isActive }]}
   {...props}
   data-astro-prefetch
+  class="dark:text-[#a3a3a3] text-black"
 >
   <slot />
 </a>
@@ -29,9 +30,9 @@ const isActive =
   a {
     display: inline-block;
     text-decoration: none;
-    color: #a3a3a3;
     text-size: 1.25rem;
   }
+
   a.active {
     font-weight: bolder;
     text-decoration: underline;
