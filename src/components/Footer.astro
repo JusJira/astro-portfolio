@@ -3,7 +3,7 @@ import SocialsLink from "./SocialsLink.astro";
 const today = new Date();
 ---
 
-<footer class="dark:bg-neutral-800 dark:text-white">
+<footer class="text-black dark:text-white">
   &copy; {today.getFullYear()} Justin Jiraratsakul. All rights reserved.
   <SocialsLink />
 </footer>
@@ -11,8 +11,6 @@ const today = new Date();
   footer {
     flex-shrink: 0;
     padding: 2em 1em 2em 1em;
-    background: linear-gradient(var(--gray-gradient)) no-repeat;
-    color: rgb(var(--gray));
     text-align: center;
   }
 </style>

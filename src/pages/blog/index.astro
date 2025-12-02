@@ -5,7 +5,6 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
 const blog = await getCollection("blog");
-import "@fontsource-variable/open-sans";
 
 blog.sort(
   (a, b) => b.data.datePublished.valueOf() - a.data.datePublished.valueOf()
@@ -13,16 +12,16 @@ blog.sort(
 ---
 
 <Layout title={`${SITE_TITLE} - Projects`} description={SITE_DESCRIPTION}>
-  <div class="p-2 max-w-[calc(100%_-_2em)] w-[1024px] m-auto mt-10">
+  <div class="md:p-16 p-4 max-w-5xl m-auto">
     <h1 class="dark:text-white font-bold text-xl text-center mb-10">
       Here are my blogs, enjoy!
     </h1>
-    <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-3 md:grid-cols-2">
       {
         blog.map((article) => (
           <a
             href={`/blog/${article.slug}/`}
-            class="dark:text-white text-black dark:bg-stone-900 bg-white relative rounded-lg hover:scale-105 transition-transform duration-100"
+            class="dark:text-white text-black dark:bg-stone-900 bg-white relative rounded-lg hover:scale-105 transition-transform duration-100 shadow-xl"
           >
             <div>
               <Image
@@ -47,8 +46,3 @@ blog.sort(
     </div>
   </div>
 </Layout>
-<style>
-  #title {
-    font-family: "Open Sans Variable", sans-serif;
-  }
-</style>

@@ -6,12 +6,24 @@ type Props = HTMLAttributes<"a">;
 const { href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+const normalize = (p?: string | URL) => {
+  const s = p == null ? "" : typeof p === "string" ? p : p.pathname;
+  return s === "/" ? "/" : s.replace(/\/$/, "");
+};
+const isActive =
+  href != null &&
+  (normalize(href) === normalize(pathname) ||
+    (normalize(href) !== "/" &&
+      normalize(pathname).startsWith(normalize(href))));
 ---
 
 <a
   href={href}
-  class:list={[className, { active: isActive }]}
+  class:list={[
+    className,
+    { active: isActive },
+    "dark:text-[#a3a3a3] text-black",
+  ]}
   {...props}
   data-astro-prefetch
 >
@@ -22,6 +34,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
     display: inline-block;
     text-decoration: none;
   }
+
   a.active {
     font-weight: bolder;
     text-decoration: underline;

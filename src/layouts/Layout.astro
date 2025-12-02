@@ -1,19 +1,28 @@
 ---
+import "../styles/global.css";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/ubuntu-sans-mono";
+import ubuntuSansMonoWoff2 from "@fontsource-variable/ubuntu-sans-mono/files/ubuntu-sans-mono-latin-wght-normal.woff2?url";
 const { title, description, image = "/OG-Image.png" } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image}/>
+    <BaseHead title={title} description={description} image={image} />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={ubuntuSansMonoWoff2}
+      crossorigin="anonymous"
+    />
   </head>
 
-  <body class="dark:bg-neutral-800 bg-neutral-100 min-h-[100dvh] flex flex-col">
+  <body class="dark:bg-neutral-950 bg-[#F5F5F5] min-h-dvh flex flex-col">
     <Header />
-    <main class="flex-auto flex flex-col items-center justify-center">
+    <main class="flex flex-col items-center max-w-5xl mx-auto">
       <slot />
     </main>
     <Footer />
@@ -21,6 +30,6 @@ const { title, description, image = "/OG-Image.png" } = Astro.props;
 </html>
 <style>
   body {
-    font-family: "JetBrains Mono Variable", sans-serif;
+    font-family: "Ubuntu Sans Mono Variable", monospace;
   }
 </style>
