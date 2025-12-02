@@ -12,6 +12,7 @@ export const EXPERIENCE = [
     description: [
       "- Software development using React, TypeScript, and Scala",
       "- Monitoring and debugging using Grafana",
+      "- CI/CD Using Gitlab",
     ],
   },
   {
