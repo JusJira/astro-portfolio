@@ -19,10 +19,13 @@ const isActive =
 
 <a
   href={href}
-  class:list={[className, { active: isActive }]}
+  class:list={[
+    className,
+    { active: isActive },
+    "dark:text-[#a3a3a3] text-black",
+  ]}
   {...props}
   data-astro-prefetch
-  class="dark:text-[#a3a3a3] text-black"
 >
   <slot />
 </a>
@@ -30,12 +33,10 @@ const isActive =
   a {
     display: inline-block;
     text-decoration: none;
-    text-size: 1.25rem;
   }
 
   a.active {
     font-weight: bolder;
     text-decoration: underline;
-    border-bottom: 1px solid transparent;
   }
 </style>
