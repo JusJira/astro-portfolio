@@ -5,7 +5,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "@fontsource-variable/ubuntu-sans-mono";
 import ubuntuSansMonoWoff2 from "@fontsource-variable/ubuntu-sans-mono/files/ubuntu-sans-mono-latin-wght-normal.woff2?url";
-import SnowBG from "../components/SnowBG.astro";
 const { title, description, image = "/OG-Image.png" } = Astro.props;
 ---
 
@@ -22,7 +21,6 @@ const { title, description, image = "/OG-Image.png" } = Astro.props;
   </head>
 
   <body class="dark:bg-neutral-950 bg-[#F5F5F5] min-h-dvh flex flex-col">
-    <SnowBG />
     <Header />
     <main class="flex flex-col items-center max-w-5xl mx-auto">
       <slot />
