@@ -13,3 +13,7 @@ h1 {
 h2 {
   @apply text-lg md:text-xl lg:text-2xl font-semibold mb-4 dark:text-white;
 }
+
+.prose a {
+  @apply underline dark:text-amber-400 text-sky-600 underline-offset-1;
+}
