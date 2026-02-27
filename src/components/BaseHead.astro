@@ -44,8 +44,8 @@ const { title, description, image } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 <!-- Umami Analytics -->
 <script
-  async
-  src="https://analytics.eu.umami.is/script.js"
+  defer
+  src="https://cloud.umami.is/script.js"
   data-website-id="51d32a71-8eb0-414f-82f2-6acbaffee454"
   is:inline></script>
 <!-- Cloudflare Analytics -->
