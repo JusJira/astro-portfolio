@@ -9,7 +9,7 @@ const { title, description } = Astro.props;
 import "../styles/project.css";
 ---
 
-<Layout title={`${SITE_TITLE} - Projects`} description={SITE_DESCRIPTION}>
+<Layout title={`${SITE_TITLE} - ${title}`} description={SITE_DESCRIPTION}>
   <article class="max-w-5xl md:px-16 p-4 dark:text-white m-auto">
     <div>
       <div class="my-10">
