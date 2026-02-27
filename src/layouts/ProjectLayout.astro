@@ -1,15 +1,16 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { SITE_DESCRIPTION } from "../consts";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Layout from "./Layout.astro";
 
 type Props = CollectionEntry<"projects">["data"];
 
 const { title, description } = Astro.props;
+console.log("description: ", description);
 import "../styles/project.css";
 ---
 
-<Layout title={`${title}`} description={SITE_DESCRIPTION}>
+<Layout title={`${SITE_TITLE} - ${title}`} description={description}>
   <article class="max-w-5xl md:px-16 p-4 dark:text-white m-auto">
     <div>
       <div class="my-10">
