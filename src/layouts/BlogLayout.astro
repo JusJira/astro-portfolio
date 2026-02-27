@@ -4,9 +4,14 @@ const { title, shortTitle, heroImage, description, datePublished } =
   Astro.props;
 import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
+import { SITE_TITLE } from "../consts";
 ---
 
-<Layout title={`${shortTitle}`} description={description} image={heroImage}>
+<Layout
+  title={`${SITE_TITLE} - ${shortTitle}`}
+  description={description}
+  image={heroImage}
+>
   <article class="max-w-5xl md:px-16 p-4 dark:text-white m-auto">
     <div>
       <div class="my-10">
