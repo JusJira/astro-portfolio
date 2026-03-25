@@ -1,4 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 
 const iconNames = ["link", "bus", "qrCode", "disc3"] as const;
 
@@ -6,6 +8,10 @@ const iconNames = ["link", "bus", "qrCode", "disc3"] as const;
 export type IconName = (typeof iconNames)[number];
 
 const projects = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/projects",
+  }),
   schema: z.object({
     title: z.string(),
     iconName: z.enum(iconNames).optional(),
@@ -19,6 +25,7 @@ const projects = defineCollection({
 });
 
 const blog = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
     shortTitle: z.string(),

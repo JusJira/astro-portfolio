@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 const projects = (await getCollection("projects")).sort(
-  (a, b) => a.data.order - b.data.order
+  (a, b) => a.data.order - b.data.order,
 );
 ---
 
@@ -20,7 +20,7 @@ const projects = (await getCollection("projects")).sort(
           <div class="rounded-md p-4 flex items-center justify-between dark:bg-stone-900 dark:hover:bg-stone-700 transition-all w-full hover:bg-neutral-100 shadow-md">
             <a
               class="w-full py-4 -my-4 pl-4 -ml-4"
-              href={`/projects/${post.slug}/`}
+              href={`/projects/${post.id}/`}
             >
               <h2 class="font-semibold">{post.data.title}</h2>
               <h3 class="text-sm">{post.data.shortDescription}</h3>

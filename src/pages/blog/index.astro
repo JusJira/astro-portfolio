@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
 const blog = await getCollection("blog");
 
 blog.sort(
-  (a, b) => b.data.datePublished.valueOf() - a.data.datePublished.valueOf()
+  (a, b) => b.data.datePublished.valueOf() - a.data.datePublished.valueOf(),
 );
 ---
 
@@ -20,7 +20,7 @@ blog.sort(
       {
         blog.map((article) => (
           <a
-            href={`/blog/${article.slug}/`}
+            href={`/blog/${article.id}/`}
             class="dark:text-white text-black dark:bg-stone-900 bg-white relative rounded-lg hover:scale-105 transition-transform duration-100 shadow-xl"
           >
             <div>

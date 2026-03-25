@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import preact from "@astrojs/preact";
@@ -14,4 +14,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  fonts: [
+    {
+      name: "Ubuntu Sans Mono",
+      cssVariable: "--font-ubuntu-sans-mono",
+      provider: fontProviders.fontsource(),
+    },
+  ],
 });
