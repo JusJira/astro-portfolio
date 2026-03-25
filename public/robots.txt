@@ -1,9 +1,6 @@
-# *
 User-agent: *
 Allow: /
-
-# Host
-Host: https://imjustin.dev
+Disallow: /cdn-cgi/
 
 # Sitemaps
 Sitemap: https://imjustin.dev/sitemap-index.xml
