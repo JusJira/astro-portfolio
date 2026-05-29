@@ -33,6 +33,7 @@ const blog = defineCollection({
     datePublished: z.date(),
     featured: z.boolean(),
     heroImage: z.string(),
+    published: z.boolean(),
   }),
 });
 
