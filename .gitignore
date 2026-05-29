@@ -23,3 +23,5 @@ wrangler.toml
 
 wrangler.toml
 node_modules
+
+.unlighthouse
