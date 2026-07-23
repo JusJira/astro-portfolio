@@ -75,7 +75,19 @@ import handsomeGuy from "../assets/images/handsomeGuy.png";
               </div>
               <h4 class="location">
                 <small>
-                  {d.location} | {d.date}
+                  {(d as any).locationColors
+                    ? (
+                      <>
+                        {(d as any).locationColors.map(
+                          (color: string, i: number) => (
+                            <span style={`color: ${color}`}>{d.location[i]}</span>
+                          ),
+                        )}
+                        {d.location.slice((d as any).locationColors.length)}
+                      </>
+                    )
+                    : d.location}{" "}
+                  | {d.date}
                 </small>
               </h4>
               <ul class="mt-2">

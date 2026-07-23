@@ -8,6 +8,7 @@ export const EXPERIENCE = [
   {
     name: "Software Engineer",
     location: "Agoda, Bangkok, Thailand",
+    locationColors: ["#FF2938", "#FDB812", "#0DB14B", "#B01E8D", "#00A9DC"],
     date: "Jun 2025 - Present",
     description: [
       "- Software development using React, TypeScript, and Scala",
