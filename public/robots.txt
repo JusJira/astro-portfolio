@@ -3,4 +3,4 @@ Allow: /
 Disallow: /cdn-cgi/
 
 # Sitemaps
-Sitemap: https://imjustin.dev/sitemap-index.xml
+Sitemap: https://jusjira.com/sitemap-index.xml

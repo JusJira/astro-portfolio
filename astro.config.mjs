@@ -8,7 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   prefetch: true,
-  site: "https://imjustin.dev",
+  site: "https://jusjira.com",
   integrations: [mdx(), sitemap(), preact()],
 
   vite: {
