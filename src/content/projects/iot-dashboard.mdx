@@ -3,7 +3,6 @@ title: "IoT Dashboard"
 description: "A dashboard showing data from an ESP8266 connected to a DHT22 temperature and humidity sensor located at home"
 shortDescription: "A dashboard to show data from IoT sensors"
 githubUrl: "https://github.com/JusJira/next-iot-dashboard"
-websiteUrl: "https://iot.jjus.dev"
 featured: false
 order: 3
 ---
@@ -29,9 +28,6 @@ A dashboard to fetch data from InfluxDB, which is a Database that is used to col
 | Not Maintained
 
 <div class="flex flex-col">
-  {frontmatter.websiteUrl ? (
-    <a href={frontmatter.websiteUrl}>Live Website</a>
-  ) : null}
   {frontmatter.githubUrl ? (
     <a href={frontmatter.githubUrl}>Github Repo</a>
   ) : null}
