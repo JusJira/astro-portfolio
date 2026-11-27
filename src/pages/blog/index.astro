@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { PAGE_DESCRIPTIONS, SITE_TITLE } from "../../consts";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
@@ -13,7 +13,10 @@ publishedBlog.sort(
 );
 ---
 
-<Layout title={`${SITE_TITLE} - Blog`} description={SITE_DESCRIPTION}>
+<Layout
+  title={`Blog — ${SITE_TITLE}`}
+  description={PAGE_DESCRIPTIONS.blog}
+>
   <div class="md:p-16 p-4 max-w-5xl m-auto">
     <h1 class="dark:text-white font-bold text-xl text-center mb-10">
       Here are my blogs, enjoy!
@@ -31,7 +34,7 @@ publishedBlog.sort(
                 class="aspect-video rounded-t-lg"
                 width={1600}
                 height={900}
-                alt="Blog post hero"
+                alt={`Cover image for ${article.data.title}`}
               />
             </div>
             <div class="w-full flex flex-col justify-end p-4 rounded-b-lg">

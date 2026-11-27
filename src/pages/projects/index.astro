@@ -1,6 +1,6 @@
 ---
 export const prerender = true;
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { PAGE_DESCRIPTIONS, SITE_TITLE } from "../../consts";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
@@ -9,7 +9,10 @@ const projects = (await getCollection("projects")).sort(
 );
 ---
 
-<Layout title={`${SITE_TITLE} - Projects`} description={SITE_DESCRIPTION}>
+<Layout
+  title={`Projects — ${SITE_TITLE}`}
+  description={PAGE_DESCRIPTIONS.projects}
+>
   <div class="h-full md:p-16 p-4 flex flex-col gap-8">
     <h1 class="dark:text-white font-bold text-xl text-center">
       Here are my personal projects

@@ -1,5 +1,11 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import {
+  AUTHOR,
+  PAGE_DESCRIPTIONS,
+  SITE_DESCRIPTION,
+  SITE_TITLE,
+  SITE_URL,
+} from "../consts";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 const projects = (await getCollection("projects"))
@@ -7,6 +13,45 @@ const projects = (await getCollection("projects"))
   .sort((a, b) => a.data.order - b.data.order);
 
 import ProjectCard from "../components/ProjectCard.astro";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: AUTHOR.name,
+    url: AUTHOR.url,
+    jobTitle: AUTHOR.jobTitle,
+    description: SITE_DESCRIPTION,
+    image: AUTHOR.image,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bangkok",
+      addressCountry: "TH",
+    },
+    worksFor: { "@type": "Organization", name: "Agoda" },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Chulalongkorn University",
+    },
+    knowsAbout: [
+      "Web development",
+      "React",
+      "Next.js",
+      "Svelte",
+      "TypeScript",
+      "Cloudflare Workers",
+    ],
+    sameAs: AUTHOR.sameAs,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: `${SITE_TITLE} — Portfolio`,
+    url: `${SITE_URL}/`,
+    inLanguage: "en",
+    author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
+  },
+];
 ---
 
 <script>
@@ -27,7 +72,11 @@ import ProjectCard from "../components/ProjectCard.astro";
   });
 </script>
 
-<Layout title={`${SITE_TITLE} - Portfolio`} description={SITE_DESCRIPTION}>
+<Layout
+  title={`${SITE_TITLE} — Software Developer in Thailand`}
+  description={PAGE_DESCRIPTIONS.home}
+  jsonLd={jsonLd}
+>
   <div class="h-full md:p-16 p-4 flex flex-col gap-8">
     <div class="dark:text-white flex flex-col w-full gap-4">
       <h1>

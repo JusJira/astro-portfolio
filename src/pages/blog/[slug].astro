@@ -5,19 +5,30 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  const publishedPosts = posts.filter((post) => post.data.published);
-  return publishedPosts.map((post) => ({
+  const posts = (await getCollection("blog"))
+    .filter((post) => post.data.published)
+    .sort(
+      (a, b) => b.data.datePublished.valueOf() - a.data.datePublished.valueOf(),
+    );
+
+  return posts.map((post) => ({
     params: { slug: post.id },
-    props: post,
+    props: {
+      post,
+      related: posts.filter((item) => item.id !== post.id).slice(0, 3),
+    },
   }));
 }
-type Props = CollectionEntry<"blog">;
 
-const post = Astro.props;
+interface Props {
+  post: CollectionEntry<"blog">;
+  related?: CollectionEntry<"blog">[];
+}
+
+const { post, related } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogLayout {...post.data}>
+<BlogLayout post={post} related={related}>
   <Content />
 </BlogLayout>

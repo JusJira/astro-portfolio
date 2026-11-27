@@ -1,6 +1,7 @@
 ---
 title: "QR Code Generator"
 iconName: "qrCode"
+metaDescription: "A minimal React QR code generator: paste a link, get a QR code you can download. No ads, no sign-up and no tracking."
 description: "A QR code generator built with ReactJs that aims the be simple, just type in just link and done. No need for Ads or anything."
 shortDescription: "Simple QR Code Generator"
 githubUrl: "https://github.com/JusJira/react-qr-code-generator"
@@ -12,13 +13,13 @@ order: 6
 import { Image } from "astro:assets";
 import webImage from "../../assets/images/qrcode.jpeg";
 
-# Preview
+## Preview
 
 <div class="flex items-center justify-center">
-  <Image src={webImage} alt="Website demo picture" />
+  <Image src={webImage} alt="QR code generator with a link field and the generated code" />
 </div>
 
-# Links
+## Links
 
 <div class="flex flex-col">
   {frontmatter.websiteUrl ? (

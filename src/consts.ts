@@ -2,8 +2,31 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = "Justin Jiraratsakul";
+export const SITE_URL = "https://jusjira.com";
 export const SITE_DESCRIPTION =
   "Justin Jiraratsakul is a passionate engineering student and web developer with an interest in creating user-friendly, modern, and high-performance websites.";
+
+export const AUTHOR = {
+  name: "Justin Jiraratsakul",
+  url: SITE_URL,
+  jobTitle: "Software Developer",
+  image: `${SITE_URL}/OG-Image.png`,
+  sameAs: [
+    "https://github.com/jusjira",
+    "https://www.linkedin.com/in/jusjira/",
+  ],
+};
+
+// Unique meta descriptions per page. Keep each between ~120 and 158 characters.
+export const PAGE_DESCRIPTIONS = {
+  home: "Justin Jiraratsakul is a software developer in Thailand building fast, accessible websites with React, Next.js and SvelteKit. See his projects and writing.",
+  about:
+    "About Justin Jiraratsakul: software engineer at Agoda, electrical engineering graduate of Chulalongkorn University, and web developer in Bangkok.",
+  projects:
+    "Personal projects by Justin Jiraratsakul: a URL shortener on Cloudflare Workers, a CU Pop Bus timetable, an IoT dashboard and a QR code generator.",
+  blog: "Notes by Justin Jiraratsakul on software engineering, side projects and things he learned the hard way, from hackathons to debugging car software.",
+} as const;
+
 export const EXPERIENCE = [
   {
     name: "Software Engineer",

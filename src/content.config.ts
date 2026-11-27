@@ -16,6 +16,8 @@ const projects = defineCollection({
     title: z.string(),
     iconName: z.enum(iconNames).optional(),
     description: z.string(),
+    // Optional longer meta description used only in the <head>; falls back to description.
+    metaDescription: z.string().optional(),
     shortDescription: z.string(),
     featured: z.boolean(),
     githubUrl: z.string().optional(),
@@ -30,6 +32,10 @@ const blog = defineCollection({
     title: z.string(),
     shortTitle: z.string(),
     description: z.string(),
+    // Optional longer meta description used only in the <head>; falls back to description.
+    metaDescription: z.string().optional(),
+    // Optional descriptive alt text for the hero image; falls back to the post title.
+    heroAlt: z.string().optional(),
     datePublished: z.date(),
     featured: z.boolean(),
     heroImage: z.string(),

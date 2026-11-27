@@ -1,16 +1,76 @@
 ---
+import { type CollectionEntry } from "astro:content";
 import Layout from "./Layout.astro";
-const { title, shortTitle, heroImage, description, datePublished } =
-  Astro.props;
 import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
-import { SITE_TITLE } from "../consts";
+import { AUTHOR, SITE_TITLE, SITE_URL } from "../consts";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  related?: CollectionEntry<"blog">[];
+}
+
+const { post, related = [] } = Astro.props;
+const { title, shortTitle, heroImage, description, metaDescription, datePublished } =
+  post.data;
+
+const pageDescription = metaDescription ?? description;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
+const heroURL = new URL(heroImage, SITE_URL);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: pageDescription,
+    image: [heroURL.href],
+    datePublished: new Date(datePublished).toISOString(),
+    dateModified: new Date(datePublished).toISOString(),
+    author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
+    publisher: {
+      "@type": "Person",
+      name: AUTHOR.name,
+      url: AUTHOR.url,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalURL.href },
+    url: canonicalURL.href,
+    inLanguage: "en",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_URL}/blog/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: shortTitle,
+        item: canonicalURL.href,
+      },
+    ],
+  },
+];
 ---
 
 <Layout
-  title={`${SITE_TITLE} - ${shortTitle}`}
-  description={description}
+  title={`${shortTitle} — ${SITE_TITLE}`}
+  description={pageDescription}
   image={heroImage}
+  type="article"
+  publishedTime={new Date(datePublished)}
+  jsonLd={jsonLd}
 >
   <article class="max-w-5xl md:px-16 p-4 dark:text-white m-auto">
     <div>
@@ -19,8 +79,8 @@ import { SITE_TITLE } from "../consts";
         <Image
           class="m-auto my-6"
           src={heroImage}
-          alt="Hero"
-          title="Blog hero image"
+          alt={post.data.heroAlt ?? title}
+          title={title}
           width={1200}
           height={630}
           loading="eager"
@@ -34,6 +94,32 @@ import { SITE_TITLE } from "../consts";
       <div class="prose prose-neutral dark:prose-invert max-w-none">
         <slot />
       </div>
+      {
+        related.length > 0 ? (
+          <nav
+            class="mt-16 border-t pt-6 dark:border-neutral-800"
+            aria-label="More posts"
+          >
+            <h2 class="font-semibold mb-3">More posts</h2>
+            <ul class="flex flex-col gap-2">
+              {related.map((item) => (
+                <li>
+                  <a href={`/blog/${item.id}/`} class="link">
+                    {item.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ) : null
+      }
     </div>
   </article>
 </Layout>
+
+<style>
+  @reference "tailwindcss";
+  .link {
+    @apply dark:text-amber-400 underline underline-offset-1;
+  }
+</style>
