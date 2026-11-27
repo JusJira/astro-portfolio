@@ -1,5 +1,6 @@
 ---
 title: "IoT Dashboard"
+metaDescription: "An IoT dashboard charting temperature and humidity from an ESP8266 and DHT22 sensor, reading stored readings out of InfluxDB."
 description: "A dashboard showing data from an ESP8266 connected to a DHT22 temperature and humidity sensor located at home"
 shortDescription: "A dashboard to show data from IoT sensors"
 githubUrl: "https://github.com/JusJira/next-iot-dashboard"
@@ -11,19 +12,19 @@ import { Image } from "astro:assets";
 import webImage from "../../assets/images/iot-dashboard-desktop.jpeg";
 import webImageMobile from "../../assets/images/iot-dashboard-mobile.jpeg";
 
-# Preview
+## Preview
 
 <div class="m-auto grid grid-cols-1 md:grid-cols-4 gap-4 grid-rows-[repeat(auto-fit)] md:grid-rows-[repeat(auto-fit)]">
-  <Image class="md:col-span-3" src={webImage} alt="Website demo picture" />
-  <Image class="max-h-fit" src={webImageMobile} alt="Website demo picture" />
+  <Image class="md:col-span-3" src={webImage} alt="IoT dashboard desktop view with temperature and humidity charts" />
+  <Image class="max-h-fit" src={webImageMobile} alt="IoT dashboard mobile view with current sensor readings" />
   <p class="md:col-span-4">Desktop & Mobile Preview</p>
 </div>
 
-# Description
+## Description
 
 A dashboard to fetch data from InfluxDB, which is a Database that is used to collect data from IoT sensors such as the ESP8266 that I am using in this project. If you are interested in the hardware side check out [this page](/projects/iot-esp8266/) where I publish the code that I used and the wiring diagram.
 
-# Links
+## Links
 
 | Not Maintained
 

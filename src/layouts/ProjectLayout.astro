@@ -1,28 +1,102 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { SITE_TITLE } from "../consts";
+import { AUTHOR, SITE_TITLE, SITE_URL } from "../consts";
 import Layout from "./Layout.astro";
-
-type Props = CollectionEntry<"projects">["data"];
-
-const { title, description } = Astro.props;
-console.log("description: ", description);
 import "../styles/project.css";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  prev?: CollectionEntry<"projects">;
+  next?: CollectionEntry<"projects">;
+}
+
+const { project, prev, next } = Astro.props;
+const { title, description, metaDescription, shortDescription } = project.data;
+
+const pageDescription = metaDescription ?? description;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: title,
+    description: shortDescription,
+    abstract: description,
+    url: canonicalURL.href,
+    codeRepository: project.data.githubUrl,
+    author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
+    inLanguage: "en",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Projects",
+        item: `${SITE_URL}/projects/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: title,
+        item: canonicalURL.href,
+      },
+    ],
+  },
+];
 ---
 
-<Layout title={`${SITE_TITLE} - ${title}`} description={description}>
+<Layout
+  title={`${title} - ${SITE_TITLE}`}
+  description={pageDescription}
+  jsonLd={jsonLd}
+>
   <article class="max-w-5xl md:px-16 p-4 dark:text-white m-auto">
     <div>
       <div class="my-10">
-        <div
-          class="text-center dark:text-neutral-300 text-neutral-600 font-thin"
-        >
-        </div>
+        <div class="text-center dark:text-neutral-300 text-neutral-600 font-thin"></div>
         <h1 class="text-4xl font-bold text-center">{title}</h1>
         <p>{description}</p>
         <hr />
       </div>
       <slot />
+      {prev || next ? (
+        <nav
+          class="mt-16 border-t pt-6 flex flex-col sm:flex-row justify-between gap-4 text-sm dark:border-neutral-800"
+          aria-label="More projects"
+        >
+          {prev ? (
+            <a href={`/projects/${prev.id}/`} class="link">
+              ← {prev.data.title}
+            </a>
+          ) : (
+            <span />
+          )}
+          {next ? (
+            <a href={`/projects/${next.id}/`} class="link sm:text-right">
+              {next.data.title} →
+            </a>
+          ) : (
+            <span />
+          )}
+        </nav>
+      ) : null}
     </div>
   </article>
 </Layout>
+
+<style>
+  @reference "tailwindcss";
+  .link {
+    @apply dark:text-amber-400 underline underline-offset-1;
+  }
+</style>
