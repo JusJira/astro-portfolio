@@ -56,45 +56,40 @@ const jsonLd = [
 ---
 
 <Layout
-  title={`${title} — ${SITE_TITLE}`}
+  title={`${title} - ${SITE_TITLE}`}
   description={pageDescription}
   jsonLd={jsonLd}
 >
   <article class="max-w-5xl md:px-16 p-4 dark:text-white m-auto">
     <div>
       <div class="my-10">
-        <div
-          class="text-center dark:text-neutral-300 text-neutral-600 font-thin"
-        >
-        </div>
+        <div class="text-center dark:text-neutral-300 text-neutral-600 font-thin"></div>
         <h1 class="text-4xl font-bold text-center">{title}</h1>
         <p>{description}</p>
         <hr />
       </div>
       <slot />
-      {
-        prev || next ? (
-          <nav
-            class="mt-16 border-t pt-6 flex flex-col sm:flex-row justify-between gap-4 text-sm dark:border-neutral-800"
-            aria-label="More projects"
-          >
-            {prev ? (
-              <a href={`/projects/${prev.id}/`} class="link">
-                ← {prev.data.title}
-              </a>
-            ) : (
-              <span />
-            )}
-            {next ? (
-              <a href={`/projects/${next.id}/`} class="link sm:text-right">
-                {next.data.title} →
-              </a>
-            ) : (
-              <span />
-            )}
-          </nav>
-        ) : null
-      }
+      {prev || next ? (
+        <nav
+          class="mt-16 border-t pt-6 flex flex-col sm:flex-row justify-between gap-4 text-sm dark:border-neutral-800"
+          aria-label="More projects"
+        >
+          {prev ? (
+            <a href={`/projects/${prev.id}/`} class="link">
+              ← {prev.data.title}
+            </a>
+          ) : (
+            <span />
+          )}
+          {next ? (
+            <a href={`/projects/${next.id}/`} class="link sm:text-right">
+              {next.data.title} →
+            </a>
+          ) : (
+            <span />
+          )}
+        </nav>
+      ) : null}
     </div>
   </article>
 </Layout>

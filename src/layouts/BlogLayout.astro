@@ -11,8 +11,14 @@ interface Props {
 }
 
 const { post, related = [] } = Astro.props;
-const { title, shortTitle, heroImage, description, metaDescription, datePublished } =
-  post.data;
+const {
+  title,
+  shortTitle,
+  heroImage,
+  description,
+  metaDescription,
+  datePublished,
+} = post.data;
 
 const pageDescription = metaDescription ?? description;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
@@ -65,7 +71,7 @@ const jsonLd = [
 ---
 
 <Layout
-  title={`${shortTitle} — ${SITE_TITLE}`}
+  title={`${shortTitle} - ${SITE_TITLE}`}
   description={pageDescription}
   image={heroImage}
   type="article"
@@ -87,32 +93,31 @@ const jsonLd = [
         />
         <FormattedDate date={datePublished} />
         <div class="text-base my-4">
-          <span class="font-semibold">Description:</span><p>{description}</p>
+          <span class="font-semibold">Description:</span>
+          <p>{description}</p>
         </div>
         <hr />
       </div>
       <div class="prose prose-neutral dark:prose-invert max-w-none">
         <slot />
       </div>
-      {
-        related.length > 0 ? (
-          <nav
-            class="mt-16 border-t pt-6 dark:border-neutral-800"
-            aria-label="More posts"
-          >
-            <h2 class="font-semibold mb-3">More posts</h2>
-            <ul class="flex flex-col gap-2">
-              {related.map((item) => (
-                <li>
-                  <a href={`/blog/${item.id}/`} class="link">
-                    {item.data.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        ) : null
-      }
+      {related.length > 0 ? (
+        <nav
+          class="mt-16 border-t pt-6 dark:border-neutral-800"
+          aria-label="More posts"
+        >
+          <h2 class="font-semibold mb-3">More posts</h2>
+          <ul class="flex flex-col gap-2">
+            {related.map((item) => (
+              <li>
+                <a href={`/blog/${item.id}/`} class="link">
+                  {item.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
     </div>
   </article>
 </Layout>

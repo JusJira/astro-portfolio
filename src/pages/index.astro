@@ -46,7 +46,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: `${SITE_TITLE} — Portfolio`,
+    name: `${SITE_TITLE} - Portfolio`,
     url: `${SITE_URL}/`,
     inLanguage: "en",
     author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
@@ -73,16 +73,18 @@ const jsonLd = [
 </script>
 
 <Layout
-  title={`${SITE_TITLE} — Software Developer in Thailand`}
+  title={`${SITE_TITLE} - Software Developer in Thailand`}
   description={PAGE_DESCRIPTIONS.home}
   jsonLd={jsonLd}
 >
   <div class="h-full md:p-16 p-4 flex flex-col gap-8">
     <div class="dark:text-white flex flex-col w-full gap-4">
       <h1>
-        Hi, I'm Justin - a <span id="software-developer" class="text-nowrap"
-          >Software Developer</span
-        > based in Thailand
+        Hi, I'm Justin - a{" "}
+        <span id="software-developer" class="text-nowrap">
+          Software Developer
+        </span>{" "}
+        based in Thailand
       </h1>
       <span class="text-lg dark:text-neutral-400 text-neutral-800">
         I love coding, tinkering, and having fun. Whether I'm building websites,
@@ -110,36 +112,38 @@ const jsonLd = [
     <div>
       <h2>My Projects</h2>
       <div class="text-neutral-400 flex gap-2 text-lg flex-wrap">
-        {
-          projects.map((project) => (
-            <ProjectCard
-              name={project.data.title}
-              iconName={project.data.iconName || "link"}
-              href={`/projects/${project.id}/`}
-            />
-          ))
-        }
+        {projects.map((project) => (
+          <ProjectCard
+            name={project.data.title}
+            iconName={project.data.iconName || "link"}
+            href={`/projects/${project.id}/`}
+          />
+        ))}
       </div>
     </div>
     <div>
       <h2>Let's Get In Touch</h2>
       <ul class="list-disc ml-6 dark:text-neutral-400 text-neutral-800">
         <li>
-          On LinkedIn: <a
-            href="https://www.linkedin.com/in/jusjira/"
-            class="link">Justin Jiraratsakul</a
-          >
+          On LinkedIn:{" "}
+          <a href="https://www.linkedin.com/in/jusjira/" class="link">
+            Justin Jiraratsakul
+          </a>
         </li>
         <li>
-          On Github: <a href="https://github.com/jusjira" class="link"
-            >@JusJira</a
-          >
+          On Github:{" "}
+          <a href="https://github.com/jusjira" class="link">
+            @JusJira
+          </a>
         </li>
         <li class="text-balance">
-          Via E-Mail: <a href="mailto:jus.jira@gmail.com" class="link"
-            >jus.jira@gmail.com</a
-          >
-          <a href="mailto:justin@kon.in.th" class="link">จัสติน@คน.ไทย</a>
+          Via E-Mail:{" "}
+          <a href="mailto:jus.jira@gmail.com" class="link">
+            jus.jira@gmail.com
+          </a>
+          <a href="mailto:justin@kon.in.th" class="link">
+            จัสติน@คน.ไทย
+          </a>
         </li>
       </ul>
     </div>
